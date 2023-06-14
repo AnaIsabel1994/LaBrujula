@@ -7,9 +7,21 @@ include "../../LoginMySql.php";//Datos de conexion SQL
 $c=new mysqli($host,$usuario,$password,$bbdd);//Loggin en phpMyAdmin
 session_start();
 
-$dest1=intval($_GET['dest1']);
-$dest2=intval($_GET['dest2']);
-$dest3=intval($_GET['dest3']);
+if (isset($_GET['dest1'])){
+    $dest1=$_GET['dest1'];
+}else{
+    $dest1=0;
+}
+if (isset($_GET['dest2'])){
+    $dest2=$_GET['dest2'];
+}else{
+    $dest2=0;
+}
+if (isset($_GET['dest3'])){
+    $dest3=$_GET['dest3'];
+}else{
+    $dest3=0;
+}
 
 $script="SELECT * FROM CIUDADES";
 $resultado=mysqli_query($c,$script); 
