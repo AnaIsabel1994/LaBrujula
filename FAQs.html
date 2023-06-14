@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="./img/LOGO.png" rel="icon"><!-- Logo en la pestaña -->
+    <title>La Brujula</title><!-- Título en la pestaña -->
+
+    <!-- Vendor CSS Files-->
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><!-- Flecha inferior -->
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"><!-- Flecha central -->
+    
+    <!-- Estilos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"><!-- Enlace a Bootstrap-->
+    <link href="./css/custom.css" rel="stylesheet">
+
+    <!--JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./script/index.js"></script>
+    <script type="text/javascript" src="./script/menu1.js"></script>
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="sticky-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="logo">
+                <a href="./index.html"><img src="./img/LOGO.png" alt="Pagina de inicio" class="img-fluid"></a>
+            </div>
+
+            <nav id="navbar" class="navbar menuPrincipal">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="./index.html">Inicio</a></li>
+                    <li class="dropdown"><a href="#"><span>Destinos</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul id="listaPaises">
+                            <!-- Aquí se inserta el desplegable, generado con JS, a partir de la BBDD -->
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="./inicioSesion.html" id="enlaceCuenta">Cuenta</a></li>
+                    
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
+    </header><!-- End Header -->
+
+    <main>
+        <section class="FAQ">
+            <div class="container py-5">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class=" col-lg-6 col-md-6 col-sm-12 imagenFAQ">
+                        <img src="./img/preguntas.png" class="img-fluid" alt="Preguntas frecuentes">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 bloqueFAQ">
+                        <h1>Preguntas más frecuentes</h1>
+                        <details>
+                            <summary>¿Como puedo sugerir nuevos destinos?</summary>
+                            <p>Puedes enviarnos un correo electrónico a través del apartado <a href="./contacto.html">Contacto</a>.</p>
+                         </details>  
+                         <details>
+                            <summary>¿Hay recomendaciones sobre donde alojarme?</summary>
+                            <p>Todavía no, pero estamos trabajando para incluirlo en el apartado Información importante, dentro de cada destino.</p>
+                         </details> 
+                         <details>
+                            <summary>¿Puedo reservar mi viaje desde la propia web?</summary>
+                            <p>No; esta web es solo para consulta y ayuda.</p>
+                         </details> 
+                         <details>
+                            <summary>¿Que moneda se usa en mi destino?</summary>
+                            <p>Puedes encontrar esa, y otra información relevante sobre tu destino, en la sección Información importante.</p>
+                         </details>   
+                         <details>
+                            <summary>Tengo un problema para acceder a mi cuenta, ¿como lo soluciono?</summary>
+                            <p>Si ya tienes cuenta en la web, pero no te permite acceder con tu clave, prueba a entrar en <a href="./claveOlvidada.html">He olvidado mi contraseña</a> y cambiarla.</p>
+                            <p>Si el error persiste, escribenos desde el apartado <a href="./contacto.html">Contacto</a>, y lo intentaremos solucionar lo antes posible.</p>
+                         </details>                    
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 footer-links">
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="./FAQs.html">FAQs</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="./contacto.html">Contactanos</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-12 footer-logo">
+                        <a href="./index.html" class="col-md-12 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                            <img src="./img/LOGO.png" alt="lenlace a la pagina de inicio"/>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-12 footer-links">
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="./avisoLegal.html">Aviso legal</a></li>
+                            <li><i class="bx bx-chevron-right"></i></i><a href="./politicaPrivacidad.html">Política de privacidad</a></li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>La Brujula</span></strong>. All Rights Reserved
+            </div>
+            <div class="creador">
+                Designed by <a href="https://github.com/AnaIsabel1994">Ana Isabel Álvarez</a><!--Enlace a GitHub-->
+            </div>
+        </div>
+    </footer>
+    <!--Flecha de volver al inicio-->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center" title="Pulsa para volver a la parte superior"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

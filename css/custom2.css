@@ -1,0 +1,113 @@
+#main{
+    margin-top: 0px;
+}
+
+/* Administrador */
+.admin .btnAccionAdmin, .admin button{
+    background-color:#98dada;
+    border:2px solid #2f4d5a;
+    color: #2f4d5a;
+    padding: 15px 20px 15px 20px;
+    max-width: 400px;
+}
+.admin .btnAccionAdmin:hover, .admin button:hover{
+    background-color: #2f4d5a;
+    border:2px solid #98dada;
+    color: #98dada;
+}
+.admin h1{
+    font-weight: bolder;
+}
+.admin h2{
+    text-align: center;
+    color: rgb(233,152,81);
+    margin: 10px 0px 20px 0px;
+}
+.opcionesAdmin{
+    display: flex;
+    justify-content: center;    
+}
+/* Administrador y Usuario */
+.botonesAdmin{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.btnCerrarSesion{
+    display: flex;
+    justify-content: flex-end;
+}
+.botonesAdmin button, .btnCerrarSesion button{
+    background-color: rgb(233,152,81);
+    color:white;
+    border:solid 1px black;
+    padding: 5px 5px 5px 5px;
+}
+.botonesAdmin button:hover, .btnCerrarSesion button:hover{
+    background-color: rgb(233,152,81);
+    color:black;
+    border:solid 1px black;
+}
+.divAccionAdmin{
+    text-align: center;
+}
+.divAccionAdmin div{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.divAccionAdmin div label{
+    font-size: large;
+}
+.divAccionAdmin div select, .divAccionAdmin div input{
+    min-width: 250px;
+}
+.tituloAccionAdmin{
+    color:#2f4d5a;
+    font-weight: bold;
+}
+div .btnModifEliminar{
+    justify-content: space-evenly;
+}
+#divSelFavoritos table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    min-width:50%;
+}
+
+#divSelFavoritos thead tr{
+    background-color:#98dada;
+    color:#2f4d5a;
+    font-weight: bold;
+}
+
+
+/*Usuario*/
+#tarjetasDestinos{/* row */
+    min-height: 400px;
+}
+#tarjetasDestinos p{
+    text-align: center;
+    margin:auto 0px;
+    padding:0px;
+}
+
+.guardarFav{/* enlace marcar favorito */
+    text-align: right;
+    margin-right: 10px;
+}
+.tarjetaGuardados{/* cada una de las tarjetas de destinos */
+    width: 18rem;
+}
+.tarjetaGuardados h5, .tarjetaGuardados p{
+    text-align: center;
+}
+.tarjetaGuardados .botonPdf{
+    display:flex;
+    justify-content: center;
+}
+.destinosFavoritos{
+    display: flex;
+    justify-content: center;
+}
+

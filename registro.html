@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="./img/LOGO.png" rel="icon"><!-- Logo en la pestaña -->
+    <title>La Brujula</title><!-- Título en la pestaña -->
+
+    <!-- Vendor CSS Files-->
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><!-- Menú deslegable y flechas -->
+    
+    <!-- Estilos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"><!-- Enlace a Bootstrap-->
+    <link href="./css/custom.css" rel="stylesheet">
+
+    <!--JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./script/menu1.js"></script>
+    <script type="text/javascript" src="./script/funcionesUtiles.js"></script>
+    <script type="text/javascript" src="./script/validarRegistro.js"></script>
+</head>
+
+<body>
+    <header id="header" class="sticky-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="logo">
+                <a href="./index.html"><img src="./img/LOGO.png" alt="Pagina de inicio" class="img-fluid"></a>
+            </div>
+
+            <nav id="navbar" class="navbar menuPrincipal">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="./index.html">Inicio</a></li>
+                    <li class="dropdown"><a href="#"><span>Destinos</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul id="listaPaises">
+                            <!-- Aquí se inserta el desplegable, generado con JS, a partir de la BBDD -->
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="./inicioSesion.html" id="enlaceCuenta">Cuenta</a></li>
+                    
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
+    </header><!-- End Header -->
+
+    <main>
+        <section>
+            <div class="registro">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-lg-6 col-md-6 col-sm-12 imagenRegistro">
+                        <img src="./img/puerta.png" class="img-fluid" id="imgVertical" alt="Vista desde el jardín de los naranjos (Roma)">
+                        <img src="./img/puerta2.png" class="img-fluid" id="imgHorizontal" alt="Fotografía de la Puerta de Brandemburgo (Berlín)">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 formRegistro">
+                        <form action="./index.php" id="formRegistro" action="./php/registro.php" method="post">
+                            <h1>Formulario de registro</h1>
+                                <!-- Mensajes de error -->
+                                <div class="form-outline mb-4 mensajeError" id="mensajesError">
+                                    <!-- En caso de haber errores, se mostrarán aquí -->
+                                </div>
+                                <label for="emailReg">Email*</label><br>
+                                <input type="email" name="emailReg" id="emailReg" title="Introduce tu email"><br>
+                                <span class="ayuda">Ejemplo: texto@dominio.com</span><br>
+                                <label for="claveReg1">Contraseña*</label><br>
+                                <input type="password" name="claveReg1" id="claveReg1" title="Introduce tu clave"><br>
+                                <span class="ayuda">Mínimo 8 caracteres; debe incluir mayúsculas, minúsculas, números y un punto (.)</span><br>
+                                <label for="claveReg2">Repetir contraseña*</label><br>
+                                <input type="password" name="claveReg2" id="claveReg2" title="Repite tu clave"><br>
+                                <label for="fechaNReg">Fecha de nacimiento</label><br>
+                                <input type="date" name="fechaNReg" id="fechaNReg" title="Introduce tu fecha de nacimiento" ><br>
+                                <input type="checkbox" name="termCond" id="termCond" required><label for=termCond>Aceptas nuestros términos y <a href="./politicaPrivacidad.html" title="Enlace a la política de privacidad">política de privacidad</a>.</label><br>
+                                <button type="submit" class="btn btn-lg btn-block" name="enviar" id="enviar">Registrarme</button>                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 footer-links">
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="./FAQs.html">FAQs</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="./contacto.html">Contactanos</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-12 footer-logo">
+                        <a href="./index.html" class="col-md-12 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                            <img src="./img/LOGO.png" />
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-12 footer-links">
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="./avisoLegal.html">Aviso legal</a></li>
+                            <li><i class="bx bx-chevron-right"></i></i><a href="./politicaPrivacidad.html">Política de privacidad</a></li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>La Brujula</span></strong>. All Rights Reserved
+            </div>
+            <div class="creador">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/ -->
+                Designed by <a href="https://github.com/AnaIsabel1994">Ana Isabel Álvarez</a><!--Enlace a GitHub-->
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
