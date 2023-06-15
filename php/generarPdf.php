@@ -85,10 +85,16 @@ for ($i=0;$i<mysqli_num_rows($resultado);$i++){
             //Saco el texto que se va a imprimir, y modifico el texto general
             if ($letra=='h'){
                 $pdf1->SetTextColor(233,152,81);
-                $pdf1->SetFont("courier","B", 12);
                 $indice2=strpos($texto, "</");
-                $impresion=substr($texto, $indice1+4, $indice2-7);
-                $nuevoTexto=substr($texto, $indice2+4);
+                if ($contador==0){
+                    $pdf1->SetFont("courier","B", 18);
+                    $impresion=substr($texto, $indice1+4, $indice2-4);
+                    $nuevoTexto=substr($texto, $indice2+4);
+                }else{
+                    $pdf1->SetFont("courier","B", 12);
+                    $impresion=substr($texto, $indice1+4, $indice2-7);
+                    $nuevoTexto=substr($texto, $indice2+4);
+                }
             }else if($letra=='p'){
                 $pdf1->SetTextColor(0,0,0);
                 $pdf1->SetFont("courier","", 12);
