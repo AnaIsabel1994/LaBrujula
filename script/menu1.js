@@ -68,4 +68,20 @@ window.addEventListener("DOMContentLoaded",()=>{
         rellenarDesplegable();//Se crea el desplegable Destinos
         enlaceCuenta();//Compruebo si hay que modificar el enlace Cuenta
     })
+    let botonResponsivo=document.getElementsByClassName("mobile-nav-toggle")[0];
+    let menuPrincipal=document.getElementsByClassName("menuPrincipal")[0];
+    botonResponsivo.addEventListener("click",()=>{
+        menuPrincipal.classList.toggle("navbar-mobile");
+        let menuDestinos=menuPrincipal.firstElementChild.children[1];
+        menuDestinos.firstElementChild.addEventListener("click",(ev)=>{
+            menuDestinos.lastElementChild.classList.toggle("dropdown-active");
+            let menuPaises=menuDestinos.lastElementChild.children;
+            for (let i=0;i<menuPaises.length;i++){
+                menuPaises[i].firstElementChild.addEventListener("click",(ev)=>{
+                    menuPaises[i].lastElementChild.classList.toggle("dropdown-active");
+                })
+            }
+        })
+        
+    })
 })

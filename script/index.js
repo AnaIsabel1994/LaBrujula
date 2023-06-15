@@ -35,12 +35,12 @@ window.addEventListener("DOMContentLoaded",()=>{
                     //Añado el enlace al destino correspondiente
                     enlace.href="./destino.html?id="+respuesta.sugerencias[i].id;
                 }
-                let numeroElementos=destinos.length-1;
+                let numeroElementos=destinos.length;
                 let indicadores=document.getElementById("carouselIndicators");
                 while(respuesta.sugerencias.length<numeroElementos){
                     let ultimoElemento=destinos[numeroElementos-1];
                     carrusel.removeChild(ultimoElemento);
-                    numeroElementos=carrusel.children.length-1;
+                    numeroElementos=carrusel.children.length;
                     
                     
                     let boton=indicadores.children[indicadores.children.length-1];
@@ -63,5 +63,20 @@ window.addEventListener("DOMContentLoaded",()=>{
     window.addEventListener("load",()=>{
         comprobarAdmin();
         asignarCarrusel();
+        window.onscroll = function() {
+            let barraN=document.getElementById("header");
+            let flechaInferior=document.getElementById("back-to-top");
+            let y = window.scrollY;
+            if (y>100){
+                barraN.classList.remove("header-transparent");
+                flechaInferior.style.visibility="visible";
+                flechaInferior.style.opacity=100;
+            }else{
+                barraN.classList.add("header-transparent");
+                flechaInferior.style.visibility="hidden";
+                flechaInferior.style.opacity=0;
+            }
+            console.log(y);
+        };
     })
 })
