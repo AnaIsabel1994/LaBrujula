@@ -27,11 +27,31 @@ if (mysqli_num_rows($resultado)!=0){
     if ($aceptado){
         echo json_encode(array('codigo' => '1', 'mensaje' => 'Se ha enviado un mail al correo indicado, con las instrucciones para cambiar tu clave.'));
     }else{//Si no se ha podido enviar el mail, borro el registro de la tabla temporal
-        $script="DELETE FROM USUARIOS_TEMP WHERE ID_REG=".$id;
+        $script="DELETE FROM USUARIOS_TEMP WHERE ID_REG=".$fila[0];
         mysqli_query($c,$script);
         echo json_encode(array('codigo' => '2', 'mensaje' => 'Se ha producido un error al enviar el correo con las instrucciones.'));
     }  
-}else{//Si el usuario ya existe, devuelvo un mensaje de error
-    echo json_encode(array('codigo' => '2', 'mensaje' => 'La direccion de correo no esta registrada.'));
+}else{//Si el usuario no está registrado
+    //Compruebo si el registro está pendiente de validar
+    $script="SELECT ID_REG FROM USUARIOS_TEMP WHERE EMAIL='".$usuario."'";
+    $resultado=mysqli_query($c,$script);
+    if (mysqli_num_rows($resultado)!=0){
+        $fila=mysqli_fetch_row($resultado);
+        $mensaje='Para completar tu registro en la web, haz clic en el siguiente enlace:<br>';
+        $mensaje=$mensaje.'<a href="https://weblabrujula.es/php/finalizarRegistro.php?id='.$fila[0].'">Enlace</a>';
+        $cabecera  = 'MIME-Version: 1.0' . "\r\n";
+        $cabecera .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $cabecera.="From: labrujula.correo@gmail.com";
+        $aceptado=mail($usuario,"Registro en La Brujula",$mensaje,$cabecera);
+        if ($aceptado){
+            echo json_encode(array('codigo' => '2', 'mensaje' => 'El registro aun esta pendiente de validar. Revisa tu correo.'));
+        }else{//Si no se ha podido enviar el mail, borro el registro de la tabla temporal
+            $script="DELETE FROM USUARIOS_TEMP WHERE ID_REG=".$fila[0];
+            mysqli_query($c,$script);
+            echo json_encode(array('codigo' => '2', 'mensaje' => 'La direccion de correo electronico no esta registrada'));
+        }  
+    }else{
+        echo json_encode(array('codigo' => '2', 'mensaje' => 'La direccion de correo no esta registrada.'));   
+    }
 }
 ?>

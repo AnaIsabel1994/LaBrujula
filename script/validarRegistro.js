@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded",()=>{
        }else{
            mensajesError.innerHTML+="<p>"+respuesta.mensaje+"</p>";
            boton.disabled=false;
+           window.scrollTo(0,0);
        }
     }
     //Función que comprueba si existe cookie de sesión (sin persistencia), correspondiente al usuario
@@ -81,6 +82,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
             if (!centinela){//Si hay algun error, muestro el DIV mensajesError, habilito de nuevo el boton Enviar, y cancelo el envio del formulario
                 boton.disabled=false;
+                window.scrollTo(0,0);
             }else{
                 registrarUsuario();
             }

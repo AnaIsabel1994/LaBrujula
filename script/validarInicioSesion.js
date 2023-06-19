@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         }else{
             mensajesError.innerHTML+="<p>"+respuesta.mensaje+"</p>";
             boton.disabled=false;
+            window.scrollTo(0,0);
         }
     }
     //Función que comprueba si existe cookie de sesión (sin persistencia), correspondiente al usuario
@@ -34,10 +35,19 @@ window.addEventListener("DOMContentLoaded",()=>{
             location.href="./cuenta.html";
         }
     }
+    async function comprobarAdmin(){
+        let response=await fetch("https://weblabrujula.es/php/comprobarAdmin.php");
+        let respuesta=await response.json();//Información extraida, en formato JSON
+        //Si existe, modificará el enlace del apartado Cuenta
+        if (respuesta.codigo==1){//Hay sesión de usuario activa
+            location.href="./admin.html";
+        }
+    }
 
     window.addEventListener("load",()=>{
         //Compruebo si ya está iniciada la sesión
         comprobarUsuario();
+        comprobarAdmin();
         mensajesError.style.display="block";
         formulario.addEventListener("submit",(ev)=>{
             ev.preventDefault();//Cancelo el envío de formulario
@@ -55,6 +65,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
             if (!centinela){//Si hay algun error, muestro el DIV mensajesError, habilito de nuevo el boton Enviar, y cancelo el envio del formulario
                 boton.disabled=false;
+                window.scrollTo(0,0);
             }else{
                 inicioSesion();
             }

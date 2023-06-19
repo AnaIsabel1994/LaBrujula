@@ -18,14 +18,18 @@ class extfpdf extends FPDF
         $this->Image('../img/LOGO.png',5,5,30);//Logo de la web
         $this->SetFont('Arial','B',18);//Fuente
         // Move to the right
-        //$this->Cell(80);
         $this->Setxy(40,17);//Posición del cursor
         $this->MultiCell(70, 5, utf8_decode("La Brujula"),0,'L',false);
-        // Title
-        //$this->Cell(30,10,'La Brujula',1,0,'C');
         // Line break
         $this->Ln(20);
-        
+    }
+    function Footer(){
+        // Go to 1.5 cm from bottom
+        $this->SetY(-15);
+        // Select Arial italic 8
+        $this->SetFont('Arial', 'I', 8);
+        // Print centered page number
+        $this->Cell(0, 10, $this->PageNo(), 0, 0, 'C');
     }
 }
 

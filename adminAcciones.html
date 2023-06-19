@@ -186,7 +186,7 @@
                             </div>
                             <br>
                             <div>
-                                <label for="descModifCiudad">Información de la ciudad*: </label>
+                                <label for="descModifCiudad">Información de la ciudad: </label>
                                 <input type="file" id="descModifCiudad" name="descModifCiudad" accept=".txt">
                             </div> 
                             <br>
@@ -266,7 +266,7 @@
                             <label for="tipoNuevoPto">Tipo*:  </label>
                             <select id="tipoNuevoPto" name="tipoNuevoPto">
                                 <option value="0" disabled>Selecciona una opción</option>
-                                <option value="MOMUMENTO">Monumento</option>
+                                <option value="MONUMENTO">Monumento</option>
                                 <option value="BARRIO">Barrio</option>
                                 <option value="IGLESIA">Iglesia</option>
                                 <option value="MUSEO">Museo</option>
@@ -320,10 +320,39 @@
                         <form action="./php/modificarPunto.php" enctype="multipart/form-data" method="post" id="formModifPto">
                             <input type="hidden" name="idModifPto" id="idModifPto" value="">
                             <h6>**Solo puedes modificar los ficheros asociados a un punto, pero no su localización, ni su nombre</h6>
+                            <br>
                             <div>
-                                <label for="imagenModifPto">Imagen (.jpj/.png)*: </label>
+                                <label for="tipoModifPto">Tipo*:  </label>
+                                <select id="tipoModifPto" name="tipoModifPto">
+                                    <option value="0" disabled>Selecciona una opción</option>
+                                    <option value="MONUMENTO">Monumento</option>
+                                    <option value="BARRIO">Barrio</option>
+                                    <option value="IGLESIA">Iglesia</option>
+                                    <option value="MUSEO">Museo</option>
+                                    <option value="V_CERCANAS">Visita cercana</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="imagenModifPto">Imagen (.jpj/.png): </label>
                                 <input type="file" id="imagenModifPto" name="imagenModifPto" accept="image/png, image/jpeg">
                             </div>
+                            <br>
+                            <div>
+                                <label for="infoModifPto">Información general (.txt): </label>
+                                <input type="file" id="infoModifPto" name="infoModifPto" accept=".txt">
+                            </div> 
+                            <br>
+                            <div>
+                                <label for="info2ModifPto">Información sobre horario/precios (.txt): </label>
+                                <input type="file" id="info2ModifPto" name="info2ModifPto" accept=".txt">
+                            </div> 
+                            <br>
+                            <div>
+                                <label for="info3ModifPto">Información curiosa (.txt): </label>
+                                <input type="file" id="info3ModifPto" name="info3ModifPto" accept=".txt">
+                            </div> 
+                            <br>
                             <div>
                                 <input type="submit" class="btnAccionAdmin" id="btnModifPto" value="Modificar"/>
                             </div>

@@ -31,6 +31,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         let respuesta=await response.json();//Información extraida, en formato JSON
         if(respuesta.codigo!=1){
             mensajesError.innerHTML=mensajesError.innerHTML+respuesta.mensaje;
+            window.scrollTo(0,0);
         }else{
             location.href="./admin.html";
         }
@@ -140,6 +141,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         let respuesta=await response.json();//Información extraida, en formato JSON
         if(respuesta.codigo!=1){
             mensajesError.innerHTML=mensajesError.innerHTML+respuesta.mensaje;
+            window.scrollTo(0,0);
         }else{
             location.href="./admin.html";
         }
@@ -148,7 +150,8 @@ window.addEventListener("DOMContentLoaded",()=>{
         let response=await fetch("https://weblabrujula.es/php/eliminarCiudad.php?idCiudad="+idCiudad);
         let respuesta=await response.json();//Información extraida, en formato JSON
         if(respuesta.codigo!=1){
-            mensajesError.innerHTML=mensajesError.innerHTML+respuesta.mensaje;
+            mensajesError.innerHTML=mensajesError.innerHTML+"<p>"+respuesta.mensaje+"</p>";
+            window.scrollTo(0,0);
         }else{
             location.href="./admin.html";
         }
@@ -158,6 +161,7 @@ window.addEventListener("DOMContentLoaded",()=>{
        let respuesta=await response.json();//Información extraida, en formato JSON
         if(respuesta.codigo!=1){
             mensajesError.innerHTML=mensajesError.innerHTML+respuesta.mensaje;
+            window.scrollTo(0,0);
         }else{
             location.href="./admin.html";
         }
@@ -167,6 +171,7 @@ window.addEventListener("DOMContentLoaded",()=>{
        let respuesta=await response.json();//Información extraida, en formato JSON
         if(respuesta.codigo!=1){
             mensajesError.innerHTML=mensajesError.innerHTML+respuesta.mensaje;
+            window.scrollTo(0,0);
         }else{
             location.href="./admin.html";
         }
@@ -204,6 +209,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         }
         if (contador>3){
             mensajesError.innerHTML="No puedes marcar mas de 3 ciudades";
+            window.scrollTo(0,0);
         }else{
             let param="";
             if (contador>0){
@@ -242,6 +248,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                         agregarPais(datosFormulario);
                     }else{
                         mensajesError.innerHTML+="<p>Introduce un nombre</p>";
+                        window.scrollTo(0,0);
                     }
                 })
                 break;
@@ -306,6 +313,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                         }
                         if (!centinela){
                             ev.preventDefault();
+                            window.scrollTo(0,0);
                         }
                     })
                 }).catch((error)=>{
@@ -364,6 +372,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                             }
                             if (!centinela){
                                 ev.preventDefault();
+                                window.scrollTo(0,0);
                             }
                         })
                     })
@@ -407,6 +416,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                         }
                         if (!centinela){
                             ev.preventDefault();
+                            window.scrollTo(0,0);
                         }
                     });
                 }).catch((error)=>{
@@ -433,16 +443,17 @@ window.addEventListener("DOMContentLoaded",()=>{
                                 mensajesError.innerHTML+="<p>El formato del archivo de Informacion general no es válido (.txt)</p>";
                                 centinela=false;
                             }
-                            if (document.getElementById('infoModif2Pto').value!="" && !validarTexto(document.getElementById('infoModif2Pto').value)){
+                            if (document.getElementById('info2ModifPto').value!="" && !validarTexto(document.getElementById('info2ModifPto').value)){
                                 mensajesError.innerHTML+="<p>El formato del archivo de Horarios/Precios no es válido (.txt)</p>";
                                 centinela=false;
                             }
-                            if (document.getElementById('infoModif3Pto').value!="" && !validarTexto(document.getElementById('infoModif3Pto').value)){
+                            if (document.getElementById('info3ModifPto').value!="" && !validarTexto(document.getElementById('info3ModifPto').value)){
                                 mensajesError.innerHTML+="<p>El formato del archivo de Datos curiosos no es válido (.txt)</p>";
                                 centinela=false;
                             }
                             if (!centinela){
                                 ev.preventDefault();
+                                window.scrollTo(0,0);
                             }
                         })
                     })

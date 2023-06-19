@@ -33,5 +33,5 @@ if (mysqli_num_rows($resultado)==0){
     $info3=$_FILES['info3NuevoPto'];
     move_uploaded_file($info3['tmp_name'],$miCarpeta.'/info3.txt');
 }
-header("Refresh:3;url='../admin.html'");
+header("Refresh:0;url='../admin.html'");
 ?>

@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             }, 3000)
        }else{
            mensajesError.innerHTML+="<p>"+respuesta.mensaje+"</p>";
-           mensajesError.style.display="block";
+           window.scrollTo(0,0);
        }
     }
     //Función que comprueba si existe cookie de sesión (sin persistencia), correspondiente al usuario
@@ -52,6 +52,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             if (clave.value=="" || !validarClave(clave.value)){
                 mensajesError.innerHTML+="<p>No has introducido una clave valida</p>";
                 centinela=false;
+                window.scrollTo(0,0);
             }
             if (centinela){
                 cambiarClaveUsuario(id);

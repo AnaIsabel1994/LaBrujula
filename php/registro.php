@@ -21,7 +21,7 @@ if (mysqli_num_rows($resultado)==0){
     $script="SELECT * FROM USUARIOS_TEMP WHERE EMAIL='".$usuario."'";
     $resultado=mysqli_query($c,$script);
     if (mysqli_num_rows($resultado)!=0){
-        echo json_encode(array('codigo' => '2', 'mensaje' => 'El registro está pendiente de verificar; compueba tu correo electrónico'));
+        echo json_encode(array('codigo' => '2', 'mensaje' => 'El registro está pendiente de verificar; compueba tu correo electrónico. Si no lo encuentras, ve a la seccion He olvidado mi contraseña'));
     }else{
         //Añado los datos a la tabla USUARIOS_TEMP
         if (isset($_POST['fNac'])){
@@ -44,12 +44,12 @@ if (mysqli_num_rows($resultado)==0){
         if ($aceptado){
             echo json_encode(array('codigo' => '1', 'mensaje' => 'Se ha enviado un mail de confirmacion al correo indicado'));
         }else{//Si no se ha podido enviar el mail, borro el registro de la tabla temporal
-            $script="DELETE FROM USUARIOS_TEMP WHERE ID_REG=".$id;
+            $script="DELETE FROM USUARIOS_TEMP WHERE ID_REG=".$fila[0];
             mysqli_query($c,$script);
-            echo json_encode(array('codigo' => '2', 'mensaje' => 'Se ha producido un error al enviar el correo de confirmación'));
+            echo json_encode(array('codigo' => '2', 'mensaje' => 'Se ha producido un error. Por favor, vuelve a intentar el registro en unos minutos'));
         }  
     }
 }else{//Si el usuario ya existe, devuelvo un mensaje de error
-    echo json_encode(array('codigo' => '2', 'mensaje' => 'El email enviado ya pertenece a un usuario registrado.'));
+    echo json_encode(array('codigo' => '2', 'mensaje' => 'El email ya pertenece a un usuario registrado.'));
 }
 ?>

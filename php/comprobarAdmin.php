@@ -4,7 +4,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header('Access-Control-Allow-Methods: GET, POST');
 session_start();
 
-//Compruebo si existe una sesión de usuario activa (no admin)
+//Compruebo si está activa la sesión de administrador
 $arrayResultados=[];  
 if ($_SESSION['tUsuario']=='admin'){
     $arrayResultados=array('codigo'=>1);

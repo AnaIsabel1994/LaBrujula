@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             }, 3000);
        }else{
            mensajesError.innerHTML+="<p>"+respuesta.mensaje+"</p>";
-           mensajesError.style.display="block";
+           window.scrollTo(0,0);
        }
     }
     //Función que comprueba si existe cookie de sesión (sin persistencia), correspondiente al usuario
@@ -50,6 +50,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             if (email.value=="" || !validarEmail(email.value)){
                 mensajesError.innerHTML+="<p>No has introducido una dirección de correo electrónico valida</p>";
                 centinela=false;
+                window.scrollTo(0,0);
             }
             if (centinela){//Si hay algun error, muestro el DIV mensajesError, y cancelo el envio del formulario
                 solicitarCambioClave();

@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         }else{
             mensajesError.innerHTML+="<p>"+respuesta.mensaje+"</p>";
             boton.disabled=false;
+            window.scrollTo(0,0);
         }
     }
     async function comprobarAdmin(){
@@ -55,8 +56,8 @@ window.addEventListener("DOMContentLoaded",()=>{
                 mensajesError.innerHTML+="<p>Tienes que seleccionar un motivo del mensaje.</p>";
                 centinela=false;
             }
-            if (!centinela){//Si hay algun error, muestro el DIV mensajesError, habilito de nuevo el boton Enviar, y cancelo el envio del formulario
-                
+            if (!centinela){//Si hay algun error, habilito de nuevo el boton Enviar, y cancelo el envio del formulario
+                window.scrollTo(0,0);
                 boton.disabled=false;
             }else{
                 enviarMensaje();

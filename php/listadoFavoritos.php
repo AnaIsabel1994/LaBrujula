@@ -39,31 +39,4 @@ if (mysqli_num_rows($resultado)!=0){//Hay puntos marcados como favoritos
     echo json_encode(array('codigo'=>2, 'script'=>$script));
 }
 
-
-//SELECT * FROM `favoritos` WHERE ID_USUARIO=4 AND ID_PTO IN (SELECT ID_PTO FROM PUNTOS_TURISTICOS WHERE ID_CIUDAD='1');
-//Función que comprueba si un usuario tiene puntos de interes marcados como favoritos
-/* $script="SELECT COUNT(*) FROM FAVORITOS WHERE ID_USUARIO=(SELECT ID_USUARIO FROM USUARIOS WHERE EMAIL='".$usuario."') ORDER BY ID_CIUDAD"; 
-$resultado=mysqli_query($c,$script);
-if (mysqli_num_rows($resultado)!=0){//Hay puntos marcados como favoritos
-    //Busco los puntos de interes, usando el ID, en la tabla correspondiente
-    $lista=array();
-    $contador=0;
-    while ($fila = mysqli_fetch_row($resultado)){
-        $contador++;
-        $script2="SELECT T.ID_PTO,T.NOMBRE,T.ID_CIUDAD,C.NOMBRE,C.FOTO_INDEX, P.NOMBRE
-        FROM PUNTOS_TURISTICOS T
-        JOIN CIUDADES C ON T.ID_CIUDAD=C.ID_CIUDAD
-        JOIN PAISES P ON C.ID_PAIS=P.ID_PAIS
-        WHERE T.ID_PTO='".$fila[0]."'"; 
-
-        $resultado2=mysqli_query($c,$script2);
-        $fila2=mysqli_fetch_row($resultado2);
-        $listaAux=array("idPto"=>$fila2[0],"nombrePto"=>$fila2[1],"idCiudad"=>$fila2[2],"nombreCiudad"=>$fila2[3],"imagenCiudad"=>$fila2[4],"nombrePais"=>$fila2[5]);
-        array_push($lista,$listaAux);
-    }
-    echo json_encode(array('codigo'=>1,'contador'=>$contador, 'lista'=>$lista));
-}else{
-    echo json_encode(array('codigo'=>2, 'script'=>$script));
-} */
-
 ?>

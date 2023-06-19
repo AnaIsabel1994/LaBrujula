@@ -39,11 +39,6 @@ if (mysqli_num_rows($resultado)==0){
     }else{
         echo('ERROR: '.mysqli_error($c).'<br>');
     }
-    
-    echo '<div>
-    <h2>El registro ha finalizado con éxito</h2>
-    <h4>Estas siendo redirigido a la página de inicio de sesión...</h4>
-    </div>';
     header("Refresh:0;url='../inicioSesion.html'");
 
 }

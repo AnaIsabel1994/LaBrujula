@@ -24,8 +24,8 @@ window.addEventListener("DOMContentLoaded",()=>{
                 }
                 pais.appendChild(listaCiudades);
             }else{
-                //Si aun no hay ciudades de ese país, deshabilito el enlace
-                pais.classList.add('disabled');
+                //Si aun no hay ciudades de ese país, dejo de mostrar el pais
+                pais.style.display="none";
 
             }
         }catch(error){

@@ -37,6 +37,12 @@ if (mysqli_num_rows($resultado)!=0){//El usuario existe
         echo json_encode(array('codigo' => '2', 'mensaje' => 'La clave es incorrecta'));
     }
 }else{
-    echo json_encode(array('codigo' => '2', 'mensaje' => 'El usuario no existe'));
+    $script="SELECT * FROM USUARIOS_TEMP WHERE EMAIL='".$usuario."'";
+    $resultado=mysqli_query($c,$script);
+    if (mysqli_num_rows($resultado)!=0){//El usuario existe, pero la cuenta está pendiente de validar
+        echo json_encode(array('codigo' => '2', 'mensaje' => 'El registro está pendiente de verificar; compueba tu correo electrónico. Si no encuentras el correo de verificacion, ve a He olvidado mi contraseña'));
+    }else{
+        echo json_encode(array('codigo' => '2', 'mensaje' => 'El usuario no existe'));
+    }
 }
 ?>

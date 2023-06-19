@@ -16,7 +16,7 @@ $resultado=mysqli_query($c,$script);
 if (mysqli_num_rows($resultado)!=0){
     echo json_encode(array('codigo'=>1));
 }else{
-    echo json_encode(array('codigo'=>2, 'script'=>$script));
+    echo json_encode(array('codigo'=>2));
 }
 
 ?>

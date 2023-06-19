@@ -22,7 +22,7 @@ if ($_GET['accion']=='si'){//Se quiere marcar el punto turistico como favorito
     if (mysqli_query($c,$script)){
         echo json_encode(array('codigo' => '1'));
     }else{
-        echo json_encode(array('codigo' => '2', 'mensaje'=>'Error al desmarcar como favorito', 'script'=>$script));
+        echo json_encode(array('codigo' => '2', 'mensaje'=>'Error al desmarcar como favorito'));
     }
 }
 

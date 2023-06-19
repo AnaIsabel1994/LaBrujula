@@ -12,7 +12,7 @@ session_start();
 
 $resultado=mysqli_query($c,$script); 
 $arrayResultados=[];  
-if(mysqli_num_rows($resultado)>0 && mysqli_num_rows($resultado)<3){
+if(mysqli_num_rows($resultado)>0 && mysqli_num_rows($resultado)<4){
     for ($i=1;$i<=mysqli_num_rows($resultado);$i++){
         $fila=mysqli_fetch_row($resultado);
         $nuevoArray=array('id'=>$fila[0],'nombre'=>$fila[1],'formatoFoto'=>$fila[2]);
